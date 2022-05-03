@@ -15,15 +15,15 @@
     state: link
   notify: Reload Nginx
 
-- name: Removes "default" site
+- name: Removes "defaults" site
   file:
     path: "/etc/nginx/sites-enabled/default"
     state: absent
   notify: Reload Nginx
 
-# UFW Configuration
-- name: "UFW - Allow HTTP on port {{ http_port }}"
-  ufw:
-    rule: allow
-    port: "{{ http_port }}"
-    proto: tcp
+
+- name: Removes "defaults" site
+  file:
+    path: "/etc/nginx/sites-available/defaults"
+    state: absent
+  notify: Reload Nginx

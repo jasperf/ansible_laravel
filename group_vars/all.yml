@@ -1,22 +1,26 @@
 ---
 # Initial Server Setup
-remote_user: sammy
+#remote_user: root
+remote_user: root
 
 # MySQL Setup
-mysql_root_password: MYSQL_ROOT_PASSWORD
-mysql_app_db: travellist
-mysql_app_user: travellist_user
-mysql_app_pass: DB_PASSWORD
+mysql_app_user: dinhlongit
+mysql_app_pass: Aa@123456
+mysql_root_user: root
+mysql_root_password: Aa@123456
+mysql_app_db: savenote
 
 # Web Server Setup
 http_host: "{{ ansible_facts.eth0.ipv4.address }}"
-remote_www_root: /var/www
-app_root_dir: travellist-demo
+#server_name: savenote.online  www.savenote.online
+server_name: localhost
+remote_www_root: /var/www/html
+app_root_dir: savenote
 document_root: "{{ remote_www_root }}/{{ app_root_dir }}/public"
 
 # Laravel Env Variables
-app_name: Travellist
-app_env: dev
+app_name: SAVENOTE
+app_env: prod
 app_debug: true
 app_url: "http://{{ http_host }}"
 db_host: localhost
